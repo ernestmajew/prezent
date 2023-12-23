@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Protected Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      #password-input {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #image-container {
+        display: none;
+        margin-top: 20px;
+      }
+      img {
+        width: 390px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="password-input">Podaj hasło:</label>
+    <input type="password" id="password-input" />
+    <button onclick="checkPassword()">></button>
+
+    <div id="image-container">
+      <img src="./img.png" alt="Cute Kitten" />
+    </div>
+
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("password-input").value;
+
+        var correctPassword = "10zl";
+
+        if (password === correctPassword) {
+          document.getElementById("image-container").style.display = "block";
+        } else {
+          alert("Incorrect password. Try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
